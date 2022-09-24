@@ -6,7 +6,7 @@ def site_is_online(url, timeout=10):
 
     Raise an exception otherwise.
     """
-    error = Exception("Deu ruim!")
+    error = Exception("Unknown error checking for status!")
     parser = urlparse(url)
     host = parser.netloc or parser.path.split("/")[0]
     for port in (80, 443):
