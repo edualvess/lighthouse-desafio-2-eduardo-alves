@@ -2,6 +2,10 @@
 
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/alves/code/lighthouse-desafio-2-eduardo-alves
 
+full_path=$(realpath $0)
+parent=$(dirname $full_path)
+cd $parent
+
 if test $# -eq 0
 then
 	echo "Running $0 with default arguments"
