@@ -16,7 +16,7 @@ Recomendamos seguir o passo-a-passo dado em aula, mas você tem liberdade para p
 - Todos os pacotes utilizados devem estar descritos em um arquivo requirements.txt
 - A aplicação deverá permitir receber um ou mais URLs como argumento e retornar o status de cada website.
 
-============================================================================
+===========================================================================
 
 Um código base foi desenvolvido em aula, e passado aos alunos para incluirmos nossa contribuição de acordo com os seguintes requisitos funcionais:
 
@@ -120,7 +120,7 @@ A pasta **./input/** foi adicionada para armazenar os arquivos para teste da fun
 
 **E com isso fechamos o primeiro requisito funcional do projeto, e partimos para a segunda etapa do desafio!**
 
-============================================================================
+===========================================================================
 
 A tarefa proposta é de criar um script que possa rodar a aplicação desenvolvida, e criar uma tarefa de agendamento no sistema, sob uma periodicidade definida.
 
