@@ -1,4 +1,6 @@
-# Atividade Prática | Módulo II #
+![INDI_capa-linkedin_institucional_016.png](attachment:INDI_capa-linkedin_institucional_016.png)
+
+# Atividade Prática | Programa Lighthouse | Módulo II #
 
 Neste desafio vamos testar seu conhecimento sobre os fundamentos de computação e versionamento de código em um projeto real de código.
 
@@ -14,7 +16,7 @@ Recomendamos seguir o passo-a-passo dado em aula, mas você tem liberdade para p
 - Todos os pacotes utilizados devem estar descritos em um arquivo requirements.txt
 - A aplicação deverá permitir receber um ou mais URLs como argumento e retornar o status de cada website.
 
-===================================================================================
+============================================================================
 
 Um código base foi desenvolvido em aula, e passado aos alunos para incluirmos nossa contribuição de acordo com os seguintes requisitos funcionais:
 
@@ -117,6 +119,56 @@ O módulo *checker.py* não teve alterações em relação ao código base.
 A pasta **./input/** foi adicionada para armazenar os arquivos para teste da funcionalidade, e atualmente contém o arquivo urls.csv.
 
 **E com isso fechamos o primeiro requisito funcional do projeto, e partimos para a segunda etapa do desafio!**
+
+============================================================================
+
+A tarefa proposta é de criar um script que possa rodar a aplicação desenvolvida, e criar uma tarefa de agendamento no sistema, sob uma periodicidade definida.
+
+
+O script abaixo resolve o diretório atual do repositório e executa os comandos a partir dele. Antes dessa manobra, o crontab não estava identificando o módulo em seu ambiente, e após diversas tentativas de encontrar uma solução elegante, partimos para essa solução funcional.
+O script verifica se o usuário passou argumentos ao chamá-lo, em caso afirmativo, ele repassa os argumentos ao CLI, caso nenhum argumento seja passado, ele roda com argumentos padrão (abrir o arquivo urls.csv na subpasta input).
+
+
+```python
+#!/bin/sh
+
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/alves/code/lighthouse-desafio-2-eduardo-alves
+
+full_path=$(realpath $0)
+parent=$(dirname $full_path)
+cd $parent
+
+if test $# -eq 0
+then
+	echo "Running $0 with default arguments"
+	python3 -m sitechecker -f ./input/urls.csv
+
+else
+	echo "Running $0 with $# arguments"
+	echo "$@"
+	python3 -m sitechecker $@
+fi
+```
+
+
+A configuração do crontab é bem simples, envolve definir corretamente os parâmetros do agendamento, e passar o comando de execução com endereços absolutos.
+Vale salientar que usuários utilizando subsistema windows para linux (wsl) podem ter alguma problema executando o cron, já que o serviço provavelmente não está configurado para iniciar na distribuição.
+
+Um exemplo de cronjob para atender a tarefa proposta é mostrado abaixo. Nesta tarefa, o script será rodado às 13:00 de todos os dias da semana do ano.
+
+O resultado da execução do script é então persistido no arquivo de log, definido arbitrariamente neste exemplo.
+
+
+
+```python
+SHELL=/bin/sh
+
+PATH=/usr/local/sbin:/usr/local/bin:/usr/bin::/usr/sbin:/sbin:/bin:/home/alves/code/lighthouse-desafio-2-eduardo-alves
+                            
+0 13 * * 1-5 dash /home/alves/code/lighthouse-desafio-2-eduardo-alves/sitechecker.sh > /tmp/crontab.log 2>&1
+```
+
+**Chegamos ao final do desafio proposto, mas não ao fim do trabalho, ainda há espaço para melhorias na aplicação, e faremos atualizações até o fim do prazo final.**
 
 
 ```python
