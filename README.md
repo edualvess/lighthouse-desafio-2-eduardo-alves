@@ -1,4 +1,4 @@
-![INDI_capa-linkedin_institucional_016.png](attachment:./input/INDI_capa-linkedin_institucional_016.png)
+![INDI_capa.png](/input/INDI_capa-linkedin_institucional_016.png)
 
 # Atividade Prática | Programa Lighthouse | Módulo II #
 
