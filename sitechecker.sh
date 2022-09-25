@@ -1,4 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/sh
+
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/alves/code/lighthouse-desafio-2-eduardo-alves
 
 if test $# -eq 0
 then
