@@ -129,7 +129,7 @@ O script abaixo resolve o diretório atual do repositório e executa os comandos
 O script verifica se o usuário passou argumentos ao chamá-lo, em caso afirmativo, ele repassa os argumentos ao CLI, caso nenhum argumento seja passado, ele roda com argumentos padrão (abrir o arquivo urls.csv na subpasta input).
 
 
-```python
+```bash
 #!/bin/sh
 
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/alves/code/lighthouse-desafio-2-eduardo-alves
@@ -160,7 +160,7 @@ O resultado da execução do script é então persistido no arquivo de log, defi
 
 
 
-```python
+```bash
 SHELL=/bin/sh
 
 PATH=/usr/local/sbin:/usr/local/bin:/usr/bin::/usr/sbin:/sbin:/bin:/home/alves/code/lighthouse-desafio-2-eduardo-alves
