@@ -118,6 +118,8 @@ O módulo *checker.py* não teve alterações em relação ao código base.
 
 A pasta **./input/** foi adicionada para armazenar os arquivos para teste da funcionalidade, e atualmente contém o arquivo urls.csv.
 
+O uso da aplicação cli se resume a dois parâmetros, "-u" seguido de URLs, diretamente no terminal, ou "-f" seguido de um caminho para o arquivo que contenha URLs (uma por linha). 
+
 **E com isso fechamos o primeiro requisito funcional do projeto, e partimos para a segunda etapa do desafio!**
 
 ===========================================================================
@@ -135,8 +137,8 @@ O script verifica se o usuário passou argumentos ao chamá-lo, em caso afirmati
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/alves/code/lighthouse-desafio-2-eduardo-alves
 
 full_path=$(realpath $0)
-parent=$(dirname $full_path)
-cd $parent
+parent_dir=$(dirname $full_path)
+cd $parent_dir
 
 if test $# -eq 0
 then
